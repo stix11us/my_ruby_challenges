@@ -1,1 +1,1 @@
-puts "Hello world! Yahoo!"
+puts "Hello world!"
