@@ -2,11 +2,10 @@ require 'rubygems'
 require 'yahoo_weatherman'
 
 def get_location(location)
+
 	client = Weatherman::Client.new
 	weather = client.lookup_by_location(location)
-
-
-	weather = get_location('90210')
+	
 
 	today = Time.now.strftime('%w').to_i
 
@@ -26,17 +25,20 @@ def get_location(location)
 
 	puts dayName + ' is going to be ' + forecast['text'].downcase + ' with a low of ' + forecast['low'].to_s + ' and a high of ' + forecast['high'].to_s
 	end
-
+	
 end
-
 puts "To find out the weather in your area, enter your zip code (e.g. 90010)"
-answer = gets.chomp
-youWeather = get_location(answer)
+location = gets.chomp
+youWeather = get_location(location)
 
-puts youWeather
+weather = get_location('90210')
+
+
+
+
 
 =begin
-
+#STEP 1
 #user input, step1-4
 puts "Enter Zip Code (e.g. 90001)"
 zip = gets.chomp
@@ -62,3 +64,5 @@ def location(zip)
 end
 
 =end
+
+
